@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Calculadora de Derivadas</h2>
+    <div class="form-group">
+      <label for="functionInput">Ingrese la función:</label>
+      <input type="text" class="form-control" id="functionInput" [(ngModel)]="inputFunction" placeholder="ej. 2*x^2 + sin(x, y)">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="calculateDerivative()">Calcular Derivadas</button>
+    <br><br>
+    <div *ngIf="results.length > 0">
+      <p>Derivadas parciales:</p>
+      <ul>
+        <li *ngFor="let result of results">{{ result }}</li>
+      </ul>
+    </div>
+  </div>
+  
