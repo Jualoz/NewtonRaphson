@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Calculadora de Newton-Raphson</h2>
+    <div class="form-group">
+      <label for="functionInput">Ingrese la función:</label>
+      <input type="text" class="form-control" id="functionInput" [(ngModel)]="inputFunction"
+             placeholder="ej. 2*x - tan(x)">
+    </div>
+    <div class="form-group">
+      <label for="initialValueInput">Valor inicial para x:</label>
+      <input type="number" class="form-control" id="initialValueInput" [(ngModel)]="initialValue">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="calculateNewtonRaphson()">Calcular</button>
+    <br><br>
+    <div *ngIf="solution">
+      <p>Solución encontrada:</p>
+      <p>x = {{ solution }}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  </div>
+  

@@ -2,7 +2,13 @@
     <h2>Calculadora de Derivadas</h2>
     <div class="form-group">
       <label for="functionInput">Ingrese la función:</label>
-      <input type="text" class="form-control" id="functionInput" [(ngModel)]="inputFunction" placeholder="ej. 2*x^2 + sin(x, y)">
+      <input type="text" class="form-control" id="functionInput" [(ngModel)]="inputFunction"
+             placeholder="ej. 2*x*y - sin(x*y)">
+    </div>
+    <div class="form-group">
+      <label for="variablesInput">Variables (separadas por comas):</label>
+      <input type="text" class="form-control" id="variablesInput" [(ngModel)]="inputVariables"
+             placeholder="ej. x, y">
     </div>
     <button type="button" class="btn btn-primary" (click)="calculateDerivative()">Calcular Derivadas</button>
     <br><br>
@@ -11,6 +17,9 @@
       <ul>
         <li *ngFor="let result of results">{{ result }}</li>
       </ul>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
     </div>
   </div>
   
